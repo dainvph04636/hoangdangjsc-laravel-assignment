@@ -25,7 +25,10 @@ Route::group(
         Route::get('logout', 'UserController@logout')->name('logout');
         Route::get('pro', 'UserController@pro')->name('pro')->middleware(['auth','check.active']);
         Route::get('list', 'UserController@list')->name('list')->middleware(['auth','check.active']);
-        // Route::get('register', 'AdminController@getRegister')->name('getRegister');
+        Route::get('add', 'UserController@createForm')->name('add')->middleware(['auth','check.active']);
+        Route::post('create-post', 'UserController@create')->name('create-post')->middleware(['auth','check.active']);
+        Route::get('{user}/edit', 'UserController@editForm')->name('edit')->middleware(['auth','check.active']);
+        Route::post('update-post', 'UserController@update')->name('update')->middleware(['auth','check.active']);
 
     }
 );

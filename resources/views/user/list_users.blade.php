@@ -3,7 +3,7 @@
 @section('title', 'Quan ly Users')
 
 @section('content')
-<a href="">Thêm User</a>
+<a href="{{route('users.add')}}">Thêm User</a>
 <table border='1' class='table'>
 	<thead>
 		<th>ID</th>
@@ -24,9 +24,8 @@
 			<td>{{$user->email}}</td>
 			<td>{{$user->address}}</td>
 			<td>
-				<a href="">Update</a>
-				<a href="#">
-				</a>
+				<a href="{{route('users.edit',$user->id)}}">Edit</a>
+				<a href="#"> </a>
 			</td>
 		</tr>
 		@endforeach
