@@ -54,5 +54,9 @@ Route::group(
     ['prefix' => 'products', 'as' => 'products.'],
     function () {
         Route::get('/', 'ProductController@index')->name('list')->middleware('auth');
+        Route::get('add', 'ProductController@createForm')->name('add')->middleware('auth');
+        Route::post('create-post', 'ProductController@create')->name('create-post')->middleware('auth');
+
+
     }
 );

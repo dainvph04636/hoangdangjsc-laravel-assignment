@@ -14,6 +14,7 @@ class Product extends Model
         'sale_percent',
         'stocks',
         'is_active',
+        'category_id',
     ];
     
     public function category()

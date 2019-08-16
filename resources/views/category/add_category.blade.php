@@ -22,4 +22,5 @@
 		<button type="submit" class="btn btn-submit">Create</button>
 	</div>
 </form>
+
 @endsection

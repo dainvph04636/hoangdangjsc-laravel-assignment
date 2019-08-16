@@ -4,7 +4,7 @@
 @section('title', 'Quan ly sản phẩm')
 @section('tieude', 'Quan ly sản phẩm')
 @section('content')
-<a href="">Thêm danh muc</a>
+<a href="{{route('products.add')}}">Thêm danh muc</a>
 <table border='1' class='table'>
 	<thead>
 		<th>ID</th>
@@ -13,7 +13,7 @@
 		<th>Price</th>
 		<th>Sale Percent</th>
 		<th>Stocks</th>
-		<!-- <th>Category</th> -->
+		<th>Category</th>
 		<th>Actions</th>
 	</thead>
 	<tbody>
@@ -25,15 +25,13 @@
 			<td>{{$product->price}}</td>
 			<td>{{$product->sale_percent}}</td>
 			<td>{{$product->stocks}}</td>
-            <!-- <td>
-				@if(count($product->categories))
-					@foreach($product->categories as $category)
-					<p>{{$category->name}}</p>
-					@endforeach
+			<td>
+				@if(isset($product->category))
+				{{$product->category->name}}
 				@else
-					<p>Không có danh mục</p>
+				<p style="font-style: italic;">(Không có danh mục)</p>
 				@endif
-			</td> -->
+			</td>
 			<td>
 				<a href="">Edit</a> &nbsp
 				<a class="delete" href="">Delete</a>
@@ -43,8 +41,8 @@
 	</tbody>
 </table>
 <script>
-    $(".delete").on("click", function(){
-        return confirm("Bạn có muốn xóa không ?");
-    });
+	$(".delete").on("click", function() {
+		return confirm("Bạn có muốn xóa không ?");
+	});
 </script>
 @endsection
