@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Product;
+use App\Models\Comment;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\ValidateLoginRequest;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +30,9 @@ class UserController extends Controller
 	{
 		$users = User::all();
 		// $users = $users->load('admins');
-        // dd($users->toArray());
+		// dd($users->toArray());
+		// $id = User::find(Auth::id());
+		// dd($id);
 		return view('user.list_users', ['users' => $users]);
 	}
 

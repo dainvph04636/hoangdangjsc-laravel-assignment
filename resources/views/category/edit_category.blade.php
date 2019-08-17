@@ -19,7 +19,7 @@
 	@endif
 	<div class="form-group">
 		<label for="name">Name Category</label>
-		<input class="form-control" type="text" id="name" name="name" value="{{isset($category) ? $category->name : ''}}">
+		<input class="form-control" type="text" id="name" name="name" value="{{$category->name}}">
 	</div>
 	<div>
 		<button type="submit" class="btn btn-submit">Create</button>

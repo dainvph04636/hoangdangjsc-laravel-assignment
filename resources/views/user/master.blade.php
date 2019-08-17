@@ -272,8 +272,8 @@ desired effect
         <li class="active"><a href="{{route('products.list')}}">
           <i class="fa fa-link"></i> <span>Quản lý sản phẩm</span></a>
         </li>
-        <li class="active"><a href="{{route('users.pro')}}">
-          <i class="fa fa-link"></i> <span>Protected</span></a>
+        <li class="active"><a href="{{route('comments.list')}}">
+          <i class="fa fa-link"></i> <span>Quản lý comments</span></a>
         </li>
 
         <li class="treeview">

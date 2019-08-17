@@ -19,31 +19,31 @@
 	@endif
 	<div class="form-group">
 		<label for="first_name">First Name</label>
-		<input class="form-control" type="text" id="first_name" name="first_name" value="{{isset($user) ? $user->first_name : ''}}">
+		<input class="form-control" type="text" id="first_name" name="first_name" value="{{$user->first_name}}">
 	</div>
     <div class="form-group">
 		<label for="last_name">Last Name</label>
-		<input class="form-control" type="text" id="last_name" name="last_name" value="{{isset($user) ? $user->last_name : ''}}">
+		<input class="form-control" type="text" id="last_name" name="last_name" value="{{$user->last_name}}">
 	</div>
     <div class="form-group">
 		<label for="email">Email</label>
-		<input class="form-control" type="text" id="email" name="email" value="{{isset($user) ? $user->email : ''}}">
+		<input class="form-control" type="text" id="email" name="email" value="{{$user->email}}">
 	</div>
     <div class="form-group">
 		<label for="password">Password</label>
-		<input class="form-control" type="password" id="password" name="password" value="{{isset($user) ? $user->password : ''}}">
+		<input class="form-control" type="password" id="password" name="password" value="">
 	</div>
     <div class="form-group">
 		<label for="address">Address</label>
-		<input class="form-control" type="text" id="address" name="address" value="{{isset($user) ? $user->address : ''}}">
+		<input class="form-control" type="text" id="address" name="address" value="{{$user->address}}">
 	</div>
     <div class="form-group">
 		<label for="birthday">Birthday</label>
-		<input class="form-control" type="date" id="birthday" name="birthday" value="{{isset($user) ? $user->birthday : ''}}">
+		<input class="form-control" type="date" id="birthday" name="birthday" value="{{$user->birthday}}">
 	</div>
     <div class="form-group">
 		<label for="is_active">Active</label>
-		<input class="form-control" type="number" id="is_active" name="is_active" value="{{isset($user) ? $user->is_active : ''}}">
+		<input class="form-control" type="number" id="is_active" name="is_active" value="{{$user->is_active}}">
 	</div>
 	<div>
 		<button type="submit" class="btn btn-submit">Apply</button>

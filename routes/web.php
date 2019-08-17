@@ -56,7 +56,19 @@ Route::group(
         Route::get('/', 'ProductController@index')->name('list')->middleware('auth');
         Route::get('add', 'ProductController@createForm')->name('add')->middleware('auth');
         Route::post('create-post', 'ProductController@create')->name('create-post')->middleware('auth');
+        Route::get('{product}/edit', 'ProductController@editForm')->name('edit')->middleware('auth');
+        Route::post('update-post', 'ProductController@update')->name('update')->middleware('auth');
+        Route::get('{product}/delete', 'ProductController@delete')->name('delete')->middleware(['auth','check.active']);
+        Route::get('{product}/detail', 'ProductController@detail')->name('detail')->middleware('auth');
 
+    }
+);
 
+Route::group(
+    ['prefix' => 'comments', 'as' => 'comments.'],
+    function () {
+        Route::get('/', 'CommentController@load')->name('list')->middleware('auth');
+        Route::post('create-post', 'CommentController@create')->name('create-post')->middleware('auth');
+        Route::get('{comment}/delete', 'CommentController@delete')->name('delete')->middleware(['auth','check.active']);
     }
 );

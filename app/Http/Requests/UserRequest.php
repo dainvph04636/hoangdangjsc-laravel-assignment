@@ -38,20 +38,23 @@ class UserRequest extends FormRequest
     {
 
         return [
-            'first_name.required' => 'Yeu cau nhap ten day du',
-            'first_name.string' => 'Ten phai la 1 chuoi ky tu',
-            'first_name.min' => 'Ten toi thieu phai 2 ky tu',
+            'first_name.required' => 'Yêu cầu nhập tên đầy đủ',
+            'first_name.string' => 'Tên phải la 1 chuoi ký tự',
+            'first_name.min' => 'Tên toi thieu phải 2 ký tự',
 
-            'last_name.required' => 'Yeu cau nhap ten day du',
-            'last_name.string' => 'Ten phai la 1 chuoi ky tu',
-            'last_name.min' => 'Ten toi thieu phai 2 ky tu',
+            'last_name.required' => 'Yêu cầu nhập tên đầy đủ',
+            'last_name.string' => 'Tên phải la 1 chuoi ký tự',
+            'last_name.min' => 'Tên toi thieu phải 2 ký tự',
 
-            'email.required' => 'Yeu cau nhap email',
-            'email.email' => 'Nhap dung dinh dang email',
+            'email.required' => 'Yêu cầu nhập email',
+            'email.email' => 'Nhập đúng định dạng email',
 
-            'password.required' => 'Yeu cau nhap mat khau',
+            'password.required' => 'Yêu cầu nhập mat khau',
             'password.min' => 'Mật khẩu tối thiểu phải 6 ký tự',
             'password.max' => 'Mật khẩu tối đa chỉ được 32 ký tự',
+
+            'birthday.required' => 'Yêu cầu nhập ngày sinh',
+
         ];
 
     }

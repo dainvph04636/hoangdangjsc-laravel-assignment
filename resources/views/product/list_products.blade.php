@@ -1,10 +1,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 @extends('user.master')
 
-@section('title', 'Quan ly sản phẩm')
-@section('tieude', 'Quan ly sản phẩm')
+@section('title', 'Quản lý sản phẩm')
+@section('tieude', 'Quản lý sản phẩm')
 @section('content')
-<a href="{{route('products.add')}}">Thêm danh muc</a>
+<a href="{{route('products.add')}}">Thêm sản phẩm</a>
 <table border='1' class='table'>
 	<thead>
 		<th>ID</th>
@@ -20,7 +20,7 @@
 		@foreach($products as $product)
 		<tr>
 			<td>{{$product->id}}</td>
-			<td>{{$product->name}}</td>
+			<td><a href="{{route('products.detail', $product->id)}}">{{$product->name}}</a></td>
 			<td>{{$product->description}}</td>
 			<td>{{$product->price}}</td>
 			<td>{{$product->sale_percent}}</td>
@@ -29,12 +29,12 @@
 				@if(isset($product->category))
 				{{$product->category->name}}
 				@else
-				<p style="font-style: italic;">(Không có danh mục)</p>
+				<p style="font-style: italic; color: red;">(Không có danh mục)</p>
 				@endif
 			</td>
 			<td>
-				<a href="">Edit</a> &nbsp
-				<a class="delete" href="">Delete</a>
+				<a href="{{route('products.edit',$product->id)}}">Edit</a> &nbsp
+				<a class="delete" href="{{route('products.delete', $product->id)}}">Delete</a>
 			</td>
 		</tr>
 		@endforeach
